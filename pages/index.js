@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import db from "../db.json";
-import Widget from '../src/components/Widget'
+import QuizBackground from '../src/components/QuizBackground';
+import Widget from '../src/components/Widget';
+import Footer from '../src/components/Footer';
+import GithubCorner from '../src/components/GithubCorner';
 
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-`;
+// const BackgroundImage = styled.div`
+//   background-image: url(${db.bg});
+//   flex: 1;
+//   background-size: cover;
+//   background-position: center;
+//   min-height: 100vh;
+// `;
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -23,7 +26,7 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <BackgroundImage>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -39,7 +42,11 @@ export default function Home() {
             <p>{db.description}</p>
           </Widget.Content>
         </Widget>
+
+        <Footer />
       </QuizContainer>
-    </BackgroundImage>
+
+      <GithubCorner projectUrl="https://github.com/rodrigoaraujo7" />
+    </QuizBackground>
   );
 }
