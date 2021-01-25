@@ -1,0 +1,12 @@
+{
+    "theme": {
+        "colors": {
+            "primary": "#fc6e20",
+            "secondary": "#ffe7d0",
+            "mainBg": "#1b1b1b",
+            "contrastText": "#ffffff",
+            "wrong": "#ff513d",
+            "sucess": "#31f773"
+        }
+    }
+}
