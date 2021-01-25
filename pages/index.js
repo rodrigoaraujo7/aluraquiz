@@ -20,11 +20,39 @@ export const QuizContainer = styled.div`
   }
 `;
 
+const Widget = styled.div`
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 1px solid ${({theme}) => theme.colors.primary};
+  background-color: #1c1814;
+  border-radius: 4px;
+  overflow: hidden;
+
+  h1, h2, h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+  }
+`;
+
 export default function Home() {
   return (
     <BackgroundImage>
       <QuizContainer>
-        dwadwa
+        <Widget>
+          <h1>{db.title}</h1>
+          <p>{db.description}</p>
+        </Widget>
+        <Widget>
+          <h1>{db.title}</h1>
+          <p>{db.description}</p>
+        </Widget>
       </QuizContainer>
     </BackgroundImage>
   );
