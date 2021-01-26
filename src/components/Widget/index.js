@@ -37,6 +37,7 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  background-color: ${({ theme }) => theme.colors.mainBg};
   & > *:first-child {
     margin-top: 0;
   }
