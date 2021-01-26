@@ -1,5 +1,5 @@
 {
-    "bg": "https://9to5mac.com/wp-content/uploads/sites/6/2019/11/Keychron-K2-Review-Wireless-Mechanical-Keyboard-9to5Mac.jpg?quality=82&strip=all&w=1600",
+    "bg": "https://i.imgur.com/EoRs4Ui.jpg",
     "title": "Keyboard Quiz Game",
     "description": "lorem ipsum dolor sit amne..",
     "external": [
@@ -7,8 +7,8 @@
     ],
     "theme": {
         "colors": {
-            "primary": "#fc6e20",
-            "secondary": "#ffe7d0",
+            "primary": "#e675d3",
+            "secondary": "#d4afe3",
             "mainBg": "#1b1b1b",
             "contrastText": "#ffffff",
             "wrong": "#ff513d",
