@@ -1,26 +1,9 @@
 import styled from "styled-components";
 import db from "../db.json";
-import MetaTags from 'react-meta-tags';
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GithubCorner from '../src/components/GithubCorner';
-
-class Component1 extends React.Component {
-  render() {
-    return (
-        <div className="wrapper">
-          <MetaTags>
-            <title>{db.title}</title>
-            <meta name="description" content={db.description} />
-            <meta property="og:title" content={db.title + 'Alura Quiz'} />
-            <meta property="og:image" content={db.bg} />
-          </MetaTags>
-          <div className="content"> Some Content </div>
-        </div>
-      )
-  }
-}
 
 export const QuizContainer = styled.div`
   width: 100%;
