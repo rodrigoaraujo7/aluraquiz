@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRouter } from 'next/router';
 import db from "../db.json";
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
@@ -13,10 +14,12 @@ export const QuizContainer = styled.div`
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
-  }
+  } 
 `;
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -25,7 +28,14 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              const name = 'Rodrigo';
+              router.push(`/quiz?name=${name}`)
+            }}>
+              <input placeholder="Send your nickname" />
+              <button type="submit">Jogar [yourNickname]</button>
+            </form>
           </Widget.Content>
         </Widget>
 
