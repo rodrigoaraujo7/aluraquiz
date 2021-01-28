@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import db from "../db.json";
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
+import Input from '../src/components/Input';
 import Footer from '../src/components/Footer';
 import GithubCorner from '../src/components/GithubCorner';
 
@@ -33,16 +34,16 @@ export default function Home() {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
             }}>
-              <input 
+              <Input 
                 onChange={function (infosDoEvento) {
                   //name = infosDoEvento.target.value
                   setName(infosDoEvento.target.value)
                 }}
                 placeholder="Send your nickname" 
               />
-              <button type="submit" disabled={name.length === 0}>
+              <Input.Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
-              </button>
+              </Input.Button>
             </form>
           </Widget.Content>
         </Widget>
