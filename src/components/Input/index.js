@@ -27,6 +27,7 @@ Input.Button = styled.button`
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
 `
 
 export default Input;
