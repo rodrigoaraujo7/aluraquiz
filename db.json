@@ -2,6 +2,32 @@
     "bg": "https://i.imgur.com/EoRs4Ui.jpg",
     "title": "Keyboard Quiz Game",
     "description": "Test your knowledge of mechanical keyboards and have fun creating your AluraQuiz!",
+    "questions": [
+      {
+        "image": "https://pplware.sapo.pt/wp-content/uploads/2019/05/teclado_mecanico-720x405.jpg",
+        "title": "which switch is the more noisy?",
+        "description": "Essa é pra aquecer",
+        "answer": 2,
+        "alternatives": [
+          "blue",
+          "red",
+          "black",
+          "brown"
+        ]
+      },
+      {
+        "image": "https://razer01-01-us-east-1-prod-media.s3.amazonaws.com/sys-master/images/h25/ha5/8980891697182/razer-keyboard-switches-usp2-mobile.jpg",
+        "title": "which switch is the more fast?",
+        "description": "Faz tempo em haha",
+        "answer": 0,
+        "alternatives": [
+          "blue",
+          "red",
+          "black",
+          "brown"
+        ]
+      }
+    ],
     "external": [
       ""
     ],

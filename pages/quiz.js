@@ -4,7 +4,6 @@ import QuizContainer from "../src/components/QuizContainer";
 import QuizBackground from "../src/components/QuizBackground";
 import Widget from "../src/components/Widget";
 import Input from "../src/components/Input";
-import Footer from "../src/components/Footer";
 import GithubCorner from "../src/components/GithubCorner";
 
 export default function QuizPage() {
@@ -15,7 +14,7 @@ export default function QuizPage() {
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>Pergunta 1 de {`&{db.questions.length}`}</h1>
+            <h1>Pergunta 1 de {` &{db.questions.length} `}</h1>
           </Widget.Header>
             <img
                 alt="Description"
