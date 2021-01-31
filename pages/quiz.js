@@ -6,15 +6,11 @@ import Widget from "../src/components/Widget";
 import Input from "../src/components/Input";
 import GithubCorner from "../src/components/GithubCorner";
 
-export default function QuizPage() {
-  const [name, setName] = React.useState("");
-
+const QuestionWidget = ({ questionsIndex, totalQuestions, questions }) => {
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>Pergunta 1 de {` &{db.questions.length} `}</h1>
+            <h1>Pergunta {questionsIndex + 1} de {totalQuestions}</h1>
           </Widget.Header>
             <img
                 alt="Description"
@@ -23,17 +19,45 @@ export default function QuizPage() {
                     height: '150px',
                     objectFit: 'cover'
                 }}
-                src="https://placehold.it/400x400"
+                src={questions.image}
             />
           <Widget.Content>
-            <h1>Title</h1>
-            <p>Description</p>
+            <h1>{questions.title}</h1>
+            <p>{questions.description}</p>
+            <form>
+              {questions.alternatives.map((alternative, alternativeIndex) => {
+                const alternativeId = `alternative__${alternativeIndex}`;
+                return (
+                  <Widget.Topic as="label" htmlFor={alternativeId}>
+                    <input id={alternativeId} type="radio" />
+                    {alternative}
+                  </Widget.Topic>
+                );
+              })}
+            </form>
             <Input.Button type="submit">CONFIRMAR</Input.Button>
           </Widget.Content>
         </Widget>
-      </QuizContainer>
-
-      <GithubCorner projectUrl="https://github.com/rodrigoaraujo7" />
-    </QuizBackground>
   );
+}
+
+export default function QuizPage() {
+    const totalQuestions = db.questions.length;
+    const questionsIndex = 0;
+    const questions = db.questions[questionsIndex];
+
+    return (
+        <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
+
+            <QuestionWidget 
+                questionsIndex={questionsIndex}
+                totalQuestions={totalQuestions}
+                questions={questions}
+            />
+        </QuizContainer>
+
+         <GithubCorner projectUrl="https://github.com/rodrigoaraujo7" />
+      </QuizBackground>
+    )
 }
