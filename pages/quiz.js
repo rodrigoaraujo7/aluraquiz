@@ -54,6 +54,12 @@ export default function QuizPage() {
     const totalQuestions = db.questions.length;
     const questionsIndex = 0;
     const questions = db.questions[questionsIndex];
+    
+    React.useEffect(() => {
+      setTimeout(() => {
+        setScreenState(screenStates.QUIZ);
+      }, 1 * 1000); 
+    }, []);
 
     return (
         <QuizBackground backgroundImage={db.bg}>
