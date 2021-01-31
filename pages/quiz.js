@@ -66,7 +66,14 @@ export default function QuizPage() {
               />
             )}
 
-            {screenState === screenStates.LOADING && <h1>Loading ...</h1>}
+            {screenState === screenStates.LOADING && <Widget.Content style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '350px'
+            }}> 
+              <Widget.Loading />   
+            </Widget.Content>}
             {screenState === screenStates.RESULT && <div>You got X questions right, congratualions!!!</div>}
         </QuizContainer>
 
