@@ -7,6 +7,8 @@ import Input from "../src/components/Input";
 import GithubCorner from "../src/components/GithubCorner";
 
 const QuestionWidget = ({ questionsIndex, totalQuestions, questions }) => {
+  const questionId = `question__${questionsIndex}`;
+
   return (
         <Widget>
           <Widget.Header>
@@ -29,7 +31,7 @@ const QuestionWidget = ({ questionsIndex, totalQuestions, questions }) => {
                 const alternativeId = `alternative__${alternativeIndex}`;
                 return (
                   <Widget.Topic as="label" htmlFor={alternativeId}>
-                    <input id={alternativeId} type="radio" />
+                    <input id={alternativeId} name={questionId} type="radio" />
                     {alternative}
                   </Widget.Topic>
                 );
@@ -41,7 +43,14 @@ const QuestionWidget = ({ questionsIndex, totalQuestions, questions }) => {
   );
 }
 
+const screenStates = {
+      QUIZ: 'QUIZ',
+      LOADING: 'LOADING',
+      RESULT: 'RESULT'
+    }
+
 export default function QuizPage() {
+    const [screenState, setScreenState] = React.useState(screenStates.LOADING);
     const totalQuestions = db.questions.length;
     const questionsIndex = 0;
     const questions = db.questions[questionsIndex];
@@ -49,12 +58,16 @@ export default function QuizPage() {
     return (
         <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
+            {screenState === screenStates.QUIZ && (
+              <QuestionWidget 
+                  questionsIndex={questionsIndex}
+                  totalQuestions={totalQuestions}
+                  questions={questions}
+              />
+            )}
 
-            <QuestionWidget 
-                questionsIndex={questionsIndex}
-                totalQuestions={totalQuestions}
-                questions={questions}
-            />
+            {screenState === screenStates.LOADING && <h1>Loading ...</h1>}
+            {screenState === screenStates.RESULT && <div>You got X questions right, congratualions!!!</div>}
         </QuizContainer>
 
          <GithubCorner projectUrl="https://github.com/rodrigoaraujo7" />

@@ -57,14 +57,15 @@ Widget.Topic = styled.a`
   background-color: ${({ theme }) => `${theme.colors.primary}40`};
   padding: 10px 15px;
   margin-bottom: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: ${({ theme }) => theme.borderRadius};
   transition: .3s;
   display: block;
   
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: .6;
+    border-radius: 0px;
   }
 `;
 
